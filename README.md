@@ -17,6 +17,20 @@ Create an application that can use to generate a random password based on certai
 Built With:
 - JavaScript
 
+## HOW TO USE
+
+- Go to the webpage https://paperpatch.github.io/weekly-challenge-3/ and click on the button `Generate Password`. This will give you a series of window prompts.
+- A list of criteria is offered:
+  - Password length to be between 8 and 128 characters.
+  - At least one of the four conditions needs to be met:
+    - Input whether you want `lowercases` in your password.
+    - Input whether you want `uppercases` in your password.
+    - Input whether you want `numbers` in your password.
+    - Input whether you want `special characters` in your password.
+- A password will be generated and written on the page.
+
+![Alt text](./assets/images/password-generator-screenshot.png "password generator screenshot") 
+
 ## USER STORY
 AS AN employee with access to sensitive data <br />
 I WANT to randomly generate a password that meets certain criteria <br />
@@ -44,8 +58,6 @@ THEN the password is either displayed in an alert or written to the page <br />
 https://paperpatch.github.io/weekly-challenge-3/
 
 Version edits and changes can be found in Github commit changes at https://github.com/paperpatch/weekly-challenge-3/
-
-![Alt text](./assets/images/password-generator-screenshot.png "password generator screenshot") 
 
 ## CONTRIBUTION
 Made by Patrick Chen
