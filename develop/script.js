@@ -1,4 +1,3 @@
-
 // Assignment code here
 
 // Password Generator
@@ -40,51 +39,47 @@ var generatePassword = function() {
       promptNumbers = false;
     };
   
-    let promptSpecialChar = window.confirm("Do you want to have special characters in your password?")
-    if (promptSpecialChar) {
-      promptSpecialChar = true;
+    let promptSymbol = window.confirm("Do you want to have special characters in your password?")
+    if (promptSymbol) {
+      promptSymbol = true;
     } else {
-      promptSpecialChar = false;
+      promptSymbol = false;
     };
   
   // Make new array for password and object
   const passwordArray = " ";
-  const generatedArray = [promptLowercase, promptUppercase, promptNumbers, promptSpecialChar];
+  const generatedArray = [promptLowercase, promptUppercase, promptNumbers, promptSymbol];
 
   // Count how many conditions were available true/false
-  const typesCount = promptLowercase + promptUppercase + promptNumbers + promptSpecialChar;
+  const typesCount = promptLowercase + promptUppercase + promptNumbers + promptSymbol;
   // console.log('typesCount: ', typesCount);
 
-  // make each type an object, randomize the first character.
-  const typesArr = [{ promptLowercase }, { promptUppercase }, { promptNumbers }, { promptSpecialChar }]
-  const randomTypesArr = Math.floor(Math.random() * typesArr.length);
-  typesArr.filter(
-    item => Object.values(item)[0]
-  );
+  // make each type an object, randomize the first type, and filter only true conditions.
+  const typesArr = [{ promptLowercase }, { promptUppercase }, { promptNumbers }, { promptSymbol }]
+  const shuffledArr = typesArr.sort(() => Math.random() - 0.5);
+  console.log(shuffledArr);
+  filterTypesArr = shuffledArr.filter(Boolean);
+  console.log(filterTypesArr);
 
   // check if user input a condition type.
   if (typesCount === 0) {
-    window.prompt("You need to have at least one character type. Please try again");
+    window.alert("You need to have at least one character type. Please try again");
     return generatePassword();
   };
 
+  let  charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+  let  newPassword = "";
+
   // iterates for new password array
-  for(var i=0; i < length; i+= typesCount) {
-    randomTypesArr.forEach(type => {
-      const newFunc = Object.keys(type)[0];
-
-      passwordArray += randomFunc[newFunc]();
-    });
+  for (let i=0; i < promptLength; i++)  {
+    newPassword += charset.charAt(Math.floor(Math.random() * charset.length));
   }
-
-  const newPassword = passwordArray.slice(0, length);
-
   return newPassword;
 };
 
 // Generator Functions
 
-var randomFunc = {
+/* var randomFunc = {
   lower: getRandomLower,
   upper: getRandomUpper,
   number: getRandomNumber,
@@ -106,8 +101,7 @@ var getRandomNumber = function() {
 var getRandomSymbol = function() {
   var specialCodes = [" ","!",'"',"#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","\\","]","^","_","`","{","|","}","~"];
   return specialCodes[Math.floor(Math.random() * symbols.length)]
-};
-
+}; */
 
 
 // Get references to the #generate element
