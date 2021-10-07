@@ -45,7 +45,7 @@ https://paperpatch.github.io/weekly-challenge-3/
 
 Version edits and changes can be found in Github commit changes at https://github.com/paperpatch/weekly-challenge-3/
 
-![Alt text](./develop/assets/images/password-generator-screenshot.png "password generator screenshot") 
+![Alt text](./assets/images/password-generator-screenshot.png "password generator screenshot") 
 
 ## CONTRIBUTION
 Made by Patrick Chen
