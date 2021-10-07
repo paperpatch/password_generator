@@ -1,75 +1,85 @@
 
 // Assignment code here
 
-// Functions to determine whether if user wants to include types to their password
-
-var determineLength = function() {
-  var promptLength = window.prompt("Please choose how long you want your password to be. A minimum of 8 characters and a maximum of 128.");
-
-  if (+promptLength >= 8 && +promptLength <= 128) {
-    hasLower = Math.floor(promptLength);
-    determineLowercase();
-  } else if (passInfo.length < 8) {
-    window.alert("Your password needs to be a minimum of 8 characters!");
-    return determineLength();
-  } else if (passInfo.length > 128) {
-    window.alert("Your password can only be a maximum of 128 characters!");
-    return determineLength();
-  } else if (isNaN()) {
-    window.alert("Your response needs be a numeric value. Please try again.")
-    return determineLength();
-  };
-};
-
-var determineLowercase = function() {
-  var promptLowercase = window.confirm("Do you want to have lowercase in your password?")
-  if (promptLowercase) {
-    hasLower = true;
-  } else {
-    hasLower = false;
-  };
-};
-
-var determineUppercase = function() {
-  var promptUppercase = window.confirm("Do you want to have uppercases in your password?")
-  if (promptUppercase) {
-    hasUpper = true;
-  } else {
-    hasUpper = false;
-  };
-};
-
-var determineNumbers = function() {
-  var promptNumbers = window.confirm("Do you want to have numbers in your password?")
-  if (promptNumbers) {
-    hasNumber = true;
-  } else {
-    hasNumber = false;
-  };
-};
-
-var determineSpecialChar = function() {
-  var promptSpecialChar = window.confirm("Do you want to have special characters in your password?")
-  if (promptSpecialChar) {
-    hasSymbol =  true;
-  } else {
-    hasSymbol = false;
-  };
-};
-
 // Password Generator
 
 var generatePassword = function() {
-  var result = (determineLength(),
-                determineLowercase(),
-                determineUppercase(),
-                determineNumbers(),
-                determineSpecialChar());
-  var generatedPassword = " ";
+  let promptLength = window.prompt("Please choose how long you want your password to be. A minimum of 8 characters and a maximum of 128.");
+    if (promptLength >= 8 && promptLength <= 128) {
+      promptLength = Math.floor(promptLength);
+    } else if (promptLength < 8) {
+      window.alert("Your password needs to be a minimum of 8 characters!");
+      generatePassword();
+    } else if (promptLength > 128) {
+      window.alert("Your password can only be a maximum of 128 characters!");
+      generatePassword();
+    } else {
+      window.alert("Your response needs be a numeric value. Please try again.");
+      generatePassword();
+    };
+  
+
+  let promptLowercase = window.confirm("Do you want to have lowercase in your password?")
+    if (promptLowercase) {
+      promptLowercase = true;
+    } else {
+      promptLowercase = false;
+    };
+  
+  let promptUppercase = window.confirm("Do you want to have uppercases in your password?")
+    if (promptUppercase) {
+      promptUppercase = true;
+    } else {
+      promptUppercase = false;
+    };
+  
+    let promptNumbers = window.confirm("Do you want to have numbers in your password?")
+    if (promptNumbers) {
+      promptNumbers = true;
+    } else {
+      promptNumbers = false;
+    };
+  
+    let promptSpecialChar = window.confirm("Do you want to have special characters in your password?")
+    if (promptSpecialChar) {
+      promptSpecialChar = true;
+    } else {
+      promptSpecialChar = false;
+    };
+  
+  // Make new array for password and object
+  const passwordArray = " ";
+  const generatedArray = [promptLowercase, promptUppercase, promptNumbers, promptSpecialChar];
 
   // Count how many conditions were available true/false
-  var typesCount = hasLower + hasUpper + hasNumber + hasSymbol;
-  console.log('typesCount: ', typesCount);
+  const typesCount = promptLowercase + promptUppercase + promptNumbers + promptSpecialChar;
+  // console.log('typesCount: ', typesCount);
+
+  // make each type an object, randomize the first character.
+  const typesArr = [{ promptLowercase }, { promptUppercase }, { promptNumbers }, { promptSpecialChar }]
+  const randomTypesArr = Math.floor(Math.random() * typesArr.length);
+  typesArr.filter(
+    item => Object.values(item)[0]
+  );
+
+  // check if user input a condition type.
+  if (typesCount === 0) {
+    window.prompt("You need to have at least one character type. Please try again");
+    return generatePassword();
+  };
+
+  // iterates for new password array
+  for(var i=0; i < length; i+= typesCount) {
+    randomTypesArr.forEach(type => {
+      const newFunc = Object.keys(type)[0];
+
+      passwordArray += randomFunc[newFunc]();
+    });
+  }
+
+  const newPassword = passwordArray.slice(0, length);
+
+  return newPassword;
 };
 
 // Generator Functions
