@@ -15,8 +15,6 @@ UConn Bootcamp Weekly Challenge 3: JavaScript: Password Generator  <br />
 Create an application that can use to generate a random password based on certain criteria. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code.<br />
 <br/>
 Built With:
-- HTML
-- CSS
 - JavaScript
 
 ## USER STORY
@@ -47,7 +45,7 @@ https://paperpatch.github.io/weekly-challenge-3/
 
 Version edits and changes can be found in Github commit changes at https://github.com/paperpatch/weekly-challenge-3/
 
-<!-- ![Alt text](./assets/images/portfolio-screenshot.png "portfolio page screenshot")  -->
+![Alt text](./develop/assets/images/password-generator-screenshot.png "password generator screenshot") 
 
 ## CONTRIBUTION
 Made by Patrick Chen
