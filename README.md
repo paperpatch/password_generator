@@ -3,6 +3,7 @@
 ## CONTENTS OF THIS FILE
 
 * Introduction
+* How to Use
 * User Story
 * Acceptance Criteria
 * Access
