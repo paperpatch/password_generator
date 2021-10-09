@@ -5,20 +5,20 @@
 var generatePassword = function() {
 
   // Window Prompts
-
+  debugger;
   let promptLength = window.prompt("Please choose how long you want your password to be. A minimum of 8 characters and a maximum of 128.");
-    if (promptLength >= 8 && promptLength <= 128) {
-      promptLength = Math.floor(promptLength);
-    } else if (promptLength < 8) {
-      window.alert("Your password needs to be a minimum of 8 characters!");
-      return generatePassword();
-    } else if (promptLength > 128) {
-      window.alert("Your password can only be a maximum of 128 characters!");
-      return generatePassword();
-    } else {
-      window.alert("Your response needs be a numeric value. Please try again.");
-      return generatePassword();
-    };
+  if (parseInt(promptLength) >= 8 && parseInt(promptLength) <= 128) {
+    promptLength = Math.floor(promptLength);
+  } else if (parseInt(promptLength) < 8) {
+    window.alert("Your password needs to be a minimum of 8 characters!");
+    return generatePassword();
+  } else if (parseInt(promptLength) > 128) {
+    window.alert("Your password can only be a maximum of 128 characters!");
+    return generatePassword();
+  } else {
+    window.alert("Your response needs be a numeric value. Please try again.");
+    return generatePassword();
+  };
   
   let promptLowercase = window.confirm("Do you want to have lowercase in your password?")
   if (promptLowercase) {
@@ -59,7 +59,7 @@ var generatePassword = function() {
 
   // Filter conditions
 
-  let  charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+  let charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 
   if (!promptLowercase) {
     charset = charset.replace("abcdefghijklmnopqrstuvwxyz", "");
