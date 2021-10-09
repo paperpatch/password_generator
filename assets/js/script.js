@@ -11,13 +11,13 @@ var generatePassword = function() {
       promptLength = Math.floor(promptLength);
     } else if (promptLength < 8) {
       window.alert("Your password needs to be a minimum of 8 characters!");
-      generatePassword();
+      return generatePassword();
     } else if (promptLength > 128) {
       window.alert("Your password can only be a maximum of 128 characters!");
-      generatePassword();
+      return generatePassword();
     } else {
       window.alert("Your response needs be a numeric value. Please try again.");
-      generatePassword();
+      return generatePassword();
     };
   
   let promptLowercase = window.confirm("Do you want to have lowercase in your password?")
