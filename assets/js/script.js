@@ -7,7 +7,10 @@ var generatePassword = function() {
   // Window Prompts
   debugger;
   let promptLength = window.prompt("Please choose how long you want your password to be. A minimum of 8 characters and a maximum of 128.");
-  if (parseInt(promptLength) >= 8 && parseInt(promptLength) <= 128) {
+   if (promptLength === null) {
+    return null
+  }
+   else if (parseInt(promptLength) >= 8 && parseInt(promptLength) <= 128) {
     promptLength = Math.floor(promptLength);
   } else if (parseInt(promptLength) < 8) {
     window.alert("Your password needs to be a minimum of 8 characters!");
