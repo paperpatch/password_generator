@@ -9,8 +9,8 @@
 
 ## INTRODUCTION
 
-UConn Bootcamp Weekly Challenge 3: JavaScript: Password Generator  <br />
-Create an application that can use to generate a random password based on certain criteria. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code.<br />
+JavaScript Password Generator  <br />
+An application that can use to generate a random password based on certain criteria. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code.<br />
 <br/>
 Built With:
 - JavaScript
